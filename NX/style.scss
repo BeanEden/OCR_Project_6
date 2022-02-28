@@ -13,52 +13,36 @@ html {
   position: relative;
   background-color: #000000;
   overflow: hidden;
+  color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+        float: left;
 }
 
     /* Style the links inside the navigation bar */
     .topnav h1 {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
       text-decoration: none;
       font-size: 3rem;
     }
 
-    /* Change the color of links on hover */
+    /* Centered section inside the top navigation */
+    .topnav-centered a{
+      display: inline-block;
+      top: 50%;
+      left: 50%;
+      //transform: translate(-50%, -50%);
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+  }
+        /* Change the color of links on hover */
     .topnav :hover {
       background-color: #ddd;
       color: black;
     }
-
-    /* Centered section inside the top navigation */
-    .topnav-centered {
-      float: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    /* Right-aligned section inside the top navigation */
-    .topnav-right {
-      float: right;
-    }
-
-    /* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
-    @media screen and (max-width: 600px) {
-      .topnav h, .topnav-right, topnav-centered {
-        float: none;
-        display: block;
-      }
-
-      .topnav-centered {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-      }
-    }
+}
 
 
 body {

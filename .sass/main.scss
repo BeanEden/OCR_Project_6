@@ -13,65 +13,71 @@ h1 {
   text-align: center;
 }
 
+/* Best film position*/
 .bg-img{
   position: relative;
   min-height: 380px;
-
+}
+/* Best film background image*/
+.bg-img img {
+  width: 100%;
+  max-height: 400px;
+  image-resolution: normal;
+  object-position: center;
+  object-fit: cover;
+  overflow: hidden;
+}
+/* Best film title*/
+.bg-img__heading {
+  position: absolute;
+  text-align: left;
+  bottom: 15%;
+  padding-left: 20px;
+  color: #fff;
+  text-shadow: -2px 2px 0 #000;
+  font-size: 4em;
+}
+/* Best film play button*/
+.bg-img__btn {
+  position: absolute;
+  bottom: 15%;
+  left: 20px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* Best film hover play button*/
+.bg-img__btn:hover {
+  background-color: black;
+}
+/* Best film description*/
+.bg-img__description {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+  padding-right: 20px;
+  width: 50%;
+}
+/* Best film hover description*/
+.bg-img__description:hover {
+  opacity: 0.8;
 }
 
-  .bg-img img {
-    width: 100%;
-    max-height: 400px;
-    image-resolution: normal;
-    object-position: center;
-    object-fit: cover;
-    overflow: hidden;
-  }
-  .bg-img__heading {
-    position: absolute;
-    text-align: left;
-    bottom: 15%;
-    padding-left: 20px;
-    color: #fff;
-    text-shadow: -2px 2px 0 #000;
-    font-size: 4em;
-  }
-  .bg-img__btn {
-    position: absolute;
-    bottom: 15%;
-    left: 20px;
-    background-color: #ff0000;
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  .bg-img__btn:hover {
-    background-color: black;
-  }
-  .bg-img__description {
-    position: absolute;
-    bottom: 20px;
-    left: 25px;
-    background-color: black;
-    opacity: 0.5;
-    color: white;
-    padding-right: 20px;
-    width: 50%;
-  }
-  .bg-img__description:hover {
-    opacity: 0.8;
-  }
-
-
+/* Category section*/
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 100%);
   overflow: hidden;
   scroll-behavior: smooth;
 }
+/* Category section*/
 .wrapper section {
   width: 100%;
   position: relative;
@@ -79,22 +85,25 @@ h1 {
   grid-template-columns: repeat(4, auto);
   margin: 20px 0;
 }
+/* Movie container*/
 .wrapper section .item {
   position: relative;
   padding: 0 2px;
   transition: 250ms all;
-  /*margin: 5% 5% 5% 5%;*/
 }
+/* Movie picture*/
 .wrapper section .item img {
-  object-fit: fill; /* Do not scale the image */
-  object-position: center; /* Center the image within the element */
+  object-fit: fill;
+  object-position: center;
   height: 100%;
 }
+/* Hover movie picture*/
 .wrapper section .item:hover {
   margin: 0 40px;
   transform: scale(1.2);
   cursor: pointer;
 }
+/* Movie title text*/
 .wrapper section .item .heading {
   position: absolute;
   bottom: 20px;
@@ -103,6 +112,7 @@ h1 {
   text-shadow: -2px 2px 0 #000;
   text-align: left;
 }
+/* Movie duration text*/
 .wrapper section .item .duration {
   position: absolute;
   bottom: 0;
@@ -110,6 +120,7 @@ h1 {
   color: #fff;
   text-shadow: -1px 1px 0 #000;
 }
+/* Arrow button background*/
 .wrapper section .arrow__btn {
   position: absolute;
   color: #fff;
@@ -121,12 +132,14 @@ h1 {
   text-align: center;
   z-index: 1;
 }
+/* Left arrow button */
 .wrapper section .left-arrow {
   top: 0;
   bottom: 0;
   left: 0;
   background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, black 100%);
 }
+/* Right arrow button */
 .wrapper section .right-arrow {
   top: 0;
   bottom: 0;
@@ -149,7 +162,6 @@ h1 {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
 /* Modal Content */
 .modal-content {
   position: relative;
@@ -164,18 +176,15 @@ h1 {
   animation-name: animatetop;
   animation-duration: 0.4s
 }
-
 /* Add Animation */
 @-webkit-keyframes animatetop {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
-
 @keyframes animatetop {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
 }
-
 /* The Close Button */
 .close {
   color: white;
@@ -183,24 +192,20 @@ h1 {
   font-size: 28px;
   font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
-
 .modal-header {
   padding: 2px 16px;
   background-color: #000;
   color: white;
 }
-
 .modal-body {
   color : #f2f2f2;
 }
-
 .modal-body p {
   padding: 2px 16px;
 }

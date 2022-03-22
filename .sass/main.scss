@@ -1,15 +1,24 @@
+:root {
+    --white-text:#f2f2f2;
+    --black-background:#000;
+    --category-background:#2b2a33;
+    --category-heading:red;
+    --modal-background:#101010;
+
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background-color: #2b2a33;
+  background-color: var(--category-background);
   font-family: Arial;
 }
 
 h1 {
-  color: red;
+  color: var(--category-heading);
   text-align: center;
 }
 
@@ -17,14 +26,14 @@ h1 {
 /* Add a black background color to the top navigation */
 .topnav {
   position: relative;
-  background-color: #000;
+  background-color: var(--black-background);
   overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: white;
+  color: var(--white-text);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -38,13 +47,13 @@ h1 {
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
-  color: black;
+  color: var(--black-background);
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
   background-color: #04AA6D;
-  color: white;
+  color: var(--white-text);
 }
 
 /* Centered section inside the top navigation */
@@ -65,7 +74,6 @@ h1 {
 .bg-img img {
   width: 100%;
   max-height: 400px;
-  image-resolution: normal;
   object-position: center;
   object-fit: cover;
   overflow: hidden;
@@ -76,8 +84,8 @@ h1 {
   text-align: left;
   bottom: 15%;
   padding-left: 20px;
-  color: #fff;
-  text-shadow: -2px 2px 0 #000;
+  color: var(--white-text);
+  text-shadow: -2px 2px 0 var(--black-background);
   font-size: 4em;
 }
 /* Best film play button*/
@@ -85,8 +93,8 @@ h1 {
   position: absolute;
   bottom: 15%;
   left: 20px;
-  background-color: #ff0000;
-  color: white;
+  background-color: var(--category-heading);
+  color: var(--white-text);
   font-size: 16px;
   padding: 12px 24px;
   border: none;
@@ -95,16 +103,16 @@ h1 {
 }
 /* Best film hover play button*/
 .bg-img__btn:hover {
-  background-color: black;
+  background-color: var(--black-background);
 }
 /* Best film description*/
 .bg-img__description {
   position: absolute;
   bottom: 20px;
   left: 25px;
-  background-color: black;
+  background-color: var(--black-background);
   opacity: 0.5;
-  color: white;
+  color: var(--white-text);
   padding-right: 20px;
   width: 50%;
 }
@@ -151,8 +159,8 @@ h1 {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  color: #fff;
-  text-shadow: -2px 2px 0 #000;
+  color: var(--white-text);
+  text-shadow: -2px 2px 0 var(--black-background);
   text-align: left;
 }
 /* Movie duration text*/
@@ -160,16 +168,16 @@ h1 {
   position: absolute;
   bottom: 0;
   left: 20px;
-  color: #fff;
-  text-shadow: -1px 1px 0 #000;
+  color: var(--white-text);
+  text-shadow: -1px 1px 0 var(--black-background);
 }
 /* Arrow button background*/
 .wrapper section .arrow__btn {
   position: absolute;
-  color: #fff;
+  color: var(--white-text);
   text-decoration: none;
   font-size: 6em;
-  background: black;
+  background: var(--black-background);
   width: 80px;
   padding: 20px;
   text-align: center;
@@ -180,28 +188,28 @@ h1 {
   top: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, var(--black-background) 100%);
 }
 /* Right arrow button */
 .wrapper section .right-arrow {
   top: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, var(--black-background) 100%);
 }
 
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
+  display: none;
+  position: fixed;
   object-position: center;
-  z-index: 1; /* Sit on top */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -210,7 +218,7 @@ h1 {
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #101010;
+  background-color: var(--modal-background);
   margin: auto;
   padding: 0;
   border: 1px solid #888;
@@ -246,7 +254,7 @@ h1 {
 /* The Close Button */
 .close {
   position:relative;
-  color: white;
+  color: var(--white-text);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -255,19 +263,19 @@ h1 {
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: var(--black-background);
   text-decoration: none;
   cursor: pointer;
 }
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #000;
-  color: white;
+  background-color: var(--black-background);
+  color: var(--white-text);
 }
 
 .modal-body {
-  color: #f2f2f2;
+  color: var(--white-text);
 }
 
 .modal-body p {

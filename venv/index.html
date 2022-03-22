@@ -2,143 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href=".css/style.css">
-    <script type="text/javascript" src=".js/script.js">
-</script>
+    <link rel="stylesheet" href="/.css/style.css">
+    <script type="text/javascript" src="/.js/script.js"></script>
     <script>
         let cat1  ="http://localhost:8000/api/v1/titles?sort_by=-imdb_score"
         let cat2 = "http://localhost:8000/api/v1/titles/?genre=Drama&sort_by=-imdb_score"
         let cat3 = "http://localhost:8000/api/v1/titles/?genre=History&sort_by=-imdb_score"
         let cat4 = "http://localhost:8000/api/v1/titles/?genre=Adventure&sort_by=-imdb_score"
-</script>
-
+    </script>
     <title>JustStreamIt</title>
 </head>
 <body>
-
- <div>
-<header class="topnav">
-    <a style="font-size: 3rem; width: 40%; text-align:left" href="">JustStreamIt</a>
-    <a class = "topnav-centered" href="">Accueil</a>
-    <a class = "topnav-centered" href="">Catégories</a>
-</header>
-</div>
-
-<div>
-    <section class=bg-img>
-        <div id="category1Film1"></div>
-        <button id=myBtn class=bg-img__btn onclick="openModal(cat1,0)"
-                >Play</button>
-
-    </section>
-</div>
-<div class="modal">
-
-</div>
-<div id="myModal" class="modal">
-    <div class=modal-content>
-    <span class=close>&times;</span>
+    <div>
+        <header class="topnav">
+            <a style="font-size: 3rem; width: 40%; text-align:left" href="">JustStreamIt</a>
+            <a class = "topnav-centered" href="">Accueil</a>
+            <a class = "topnav-centered" href="">Catégories</a>
+        </header>
     </div>
-  </div>
+    <div>
+        <section class=bg-img>
+            <div id="category1Film1"></div>
+            <button id=myBtn class=bg-img__btn onclick="openModal(cat1,0)">Play</button>
+        </section>
+    </div>
+    <div class="modal"></div>
+    <div id="myModal" class="modal">
+        <div class=modal-content>
+            <span class=close>&times;</span>
+        </div>
+    </div>
 
-<!-- FILMS LES MIEUX NOTES PAR IMDB (rang 2 à 8)-->
-      <h1>Films les mieux notés</h1>
-      <div class="wrapper">
-  <!-- SECTION 1-->
+    <!-- FILMS LES MIEUX NOTES PAR IMDB (rang 2 à 8)-->
+    <h1>Films les mieux notés</h1>
+    <div class="wrapper">
+    <!-- SECTION 1-->
         <section id="section1">
-          <a href="#section2" class="arrow__btn left-arrow">‹</a>
-            <div id="category1Film2" class="item" onclick="openModal(cat1,1)"></div>
-            <div id="category1Film3" class="item" onclick="openModal(cat1,2)"></div>
-            <div id="category1Film4" class="item" onclick="openModal(cat1,3)"></div>
-            <div id="category1Film5" class="item" onclick="openModal(cat1,4)"></div>
-          <a href="#section2" class="arrow__btn right-arrow">›</a>
+            <a href="#section2" class="arrow__btn left-arrow">‹</a>
+                <div id="category1Film2" class="item" onclick="openModal(cat1,1)"></div>
+                <div id="category1Film3" class="item" onclick="openModal(cat1,2)"></div>
+                <div id="category1Film4" class="item" onclick="openModal(cat1,3)"></div>
+                <div id="category1Film5" class="item" onclick="openModal(cat1,4)"></div>
+            <a href="#section2" class="arrow__btn right-arrow">›</a>
         </section>
-  <!-- SECTION 2-->
+      <!-- SECTION 2-->
         <section id="section2">
-          <a href="#section1" class="arrow__btn left-arrow">‹</a>
-            <div id="category1Film6" class="item" onclick="openModal(cat1,5)"></div>
-            <div id="category1Film7" class="item" onclick="openModal(cat1,6)"></div>
-            <div id="category1Film8" class="item" onclick="openModal(cat1,7)"></div>
-          <a href="#section1" class="arrow__btn right-arrow">›</a>
+            <a href="#section1" class="arrow__btn left-arrow">‹</a>
+                <div id="category1Film6" class="item" onclick="openModal(cat1,5)"></div>
+                <div id="category1Film7" class="item" onclick="openModal(cat1,6)"></div>
+                <div id="category1Film8" class="item" onclick="openModal(cat1,7)"></div>
+            <a href="#section1" class="arrow__btn right-arrow">›</a>
         </section>
-      </div>
+    </div>
 
- <!-- FILMS DRAMA (rang 1 à 7)-->
-      <h1>Films les mieux notés - Drame</h1>
-      <div class="wrapper">
-  <!-- SECTION 3-->
+     <!-- FILMS DRAMA (rang 1 à 7)-->
+    <h1>Films les mieux notés - Drame</h1>
+    <div class="wrapper">
+      <!-- SECTION 3-->
         <section id="section3">
-          <a href="#section4" class="arrow__btn left-arrow">‹</a>
-            <div id="category2Film1" class="item" onclick="openModal(cat2,0)"></div>
-            <div id="category2Film2" class="item" onclick="openModal(cat2,1)"></div>
-            <div id="category2Film3" class="item" onclick="openModal(cat2,2)"></div>
-            <div id="category2Film4" class="item" onclick="openModal(cat2,3)"></div>
-          <a href="#section4" class="arrow__btn right-arrow">›</a>
+            <a href="#section4" class="arrow__btn left-arrow">‹</a>
+                <div id="category2Film1" class="item" onclick="openModal(cat2,0)"></div>
+                <div id="category2Film2" class="item" onclick="openModal(cat2,1)"></div>
+                <div id="category2Film3" class="item" onclick="openModal(cat2,2)"></div>
+                <div id="category2Film4" class="item" onclick="openModal(cat2,3)"></div>
+            <a href="#section4" class="arrow__btn right-arrow">›</a>
         </section>
-  <!-- SECTION 4-->
+      <!-- SECTION 4-->
         <section id="section4">
-          <a href="#section3" class="arrow__btn left-arrow">‹</a>
-            <div id="category2Film5" class="item" onclick="openModal(cat2,4)"></div>
-            <div id="category2Film6" class="item" onclick="openModal(cat2,5)"></div>
-            <div id="category2Film7" class="item" onclick="openModal(cat2,6)"></div>
-          <a href="#section3" class="arrow__btn right-arrow">›</a>
+            <a href="#section3" class="arrow__btn left-arrow">‹</a>
+                <div id="category2Film5" class="item" onclick="openModal(cat2,4)"></div>
+                <div id="category2Film6" class="item" onclick="openModal(cat2,5)"></div>
+                <div id="category2Film7" class="item" onclick="openModal(cat2,6)"></div>
+            <a href="#section3" class="arrow__btn right-arrow">›</a>
         </section>
-      </div>
+    </div>
 
- <!-- FILMS History (rang 1 à 7)-->
-      <h1>Films les mieux notés - Historique</h1>
-      <div class="wrapper">
-  <!-- SECTION 5-->
+     <!-- FILMS History (rang 1 à 7)-->
+    <h1>Films les mieux notés - Historique</h1>
+    <div class="wrapper">
+      <!-- SECTION 5-->
         <section id="section5">
-          <a href="#section6" class="arrow__btn left-arrow">‹</a>
-            <div id="category3Film1" class="item" onclick="openModal(cat3,0)"></div>
-            <div id="category3Film2" class="item" onclick="openModal(cat3,1)"></div>
-            <div id="category3Film3" class="item" onclick="openModal(cat3,2)"></div>
-            <div id="category3Film4" class="item" onclick="openModal(cat3,3)"></div>
-          <a href="#section6" class="arrow__btn right-arrow">›</a>
+            <a href="#section6" class="arrow__btn left-arrow">‹</a>
+                <div id="category3Film1" class="item" onclick="openModal(cat3,0)"></div>
+                <div id="category3Film2" class="item" onclick="openModal(cat3,1)"></div>
+                <div id="category3Film3" class="item" onclick="openModal(cat3,2)"></div>
+                <div id="category3Film4" class="item" onclick="openModal(cat3,3)"></div>
+            <a href="#section6" class="arrow__btn right-arrow">›</a>
         </section>
-  <!-- SECTION 6-->
+      <!-- SECTION 6-->
         <section id="section6">
-          <a href="#section5" class="arrow__btn left-arrow">‹</a>
-            <div id="category3Film5" class="item" onclick="openModal(cat3,4)"></div>
-            <div id="category3Film6" class="item" onclick="openModal(cat3,5)"></div>
-            <div id="category3Film7" class="item" onclick="openModal(cat3,6)"></div>
-          <a href="#section5" class="arrow__btn right-arrow">›</a>
+            <a href="#section5" class="arrow__btn left-arrow">‹</a>
+                <div id="category3Film5" class="item" onclick="openModal(cat3,4)"></div>
+                <div id="category3Film6" class="item" onclick="openModal(cat3,5)"></div>
+                <div id="category3Film7" class="item" onclick="openModal(cat3,6)"></div>
+            <a href="#section5" class="arrow__btn right-arrow">›</a>
         </section>
-      </div>
+    </div>
 
-  <!-- FILMS Adventure (rang 1 à 7)-->
-      <h1>Films les mieux notés - Aventure</h1>
-      <div class="wrapper">
-  <!-- SECTION 7-->
+      <!-- FILMS Adventure (rang 1 à 7)-->
+    <h1>Films les mieux notés - Aventure</h1>
+    <div class="wrapper">
+      <!-- SECTION 7-->
         <section id="section7">
-          <a href="#section8" class="arrow__btn left-arrow">‹</a>
-            <div id="category4Film1" class="item" onclick="openModal(cat4,0)"></div>
-            <div id="category4Film2" class="item" onclick="openModal(cat4,1)"></div>
-            <div id="category4Film3" class="item" onclick="openModal(cat4,2)"></div>
-            <div id="category4Film4" class="item" onclick="openModal(cat4,3)"></div>
-          <a href="#section8" class="arrow__btn right-arrow">›</a>
+            <a href="#section8" class="arrow__btn left-arrow">‹</a>
+                <div id="category4Film1" class="item" onclick="openModal(cat4,0)"></div>
+                <div id="category4Film2" class="item" onclick="openModal(cat4,1)"></div>
+                <div id="category4Film3" class="item" onclick="openModal(cat4,2)"></div>
+                <div id="category4Film4" class="item" onclick="openModal(cat4,3)"></div>
+            <a href="#section8" class="arrow__btn right-arrow">›</a>
         </section>
-  <!-- SECTION 8-->
+      <!-- SECTION 8-->
         <section id="section8">
-          <a href="#section7" class="arrow__btn left-arrow">‹</a>
-            <div id="category4Film5" class="item" onclick="openModal(cat4,4)"></div>
-            <div id="category4Film6" class="item" onclick="openModal(cat4,5)"></div>
-            <div id="category4Film7" class="item" onclick="openModal(cat4,6)"></div>
-          <a href="#section7" class="arrow__btn right-arrow">›</a>
+            <a href="#section7" class="arrow__btn left-arrow">‹</a>
+                <div id="category4Film5" class="item" onclick="openModal(cat4,4)"></div>
+                <div id="category4Film6" class="item" onclick="openModal(cat4,5)"></div>
+                <div id="category4Film7" class="item" onclick="openModal(cat4,6)"></div>
+            <a href="#section7" class="arrow__btn right-arrow">›</a>
         </section>
-      </div>
+    </div>
+    <script>
+        allCat(cat1,cat2,cat3,cat4)
 
-<script >
-    allCat(cat1,cat2,cat3,cat4)
-
-let modal = document.getElementById("myModal");
-    // Get the button that opens the modal
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+    </script>
 </body>
 </html>

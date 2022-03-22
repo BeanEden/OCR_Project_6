@@ -70,6 +70,11 @@ h1 {
   position: relative;
   min-height: 380px;
 }
+
+.bg-img h2 {
+  display : none;
+}
+
 /* Best film background image*/
 .bg-img img {
   width: 100%;
@@ -136,12 +141,19 @@ h1 {
   grid-template-columns: repeat(4, auto);
   margin: 20px 0;
 }
+
+.wrapper section h2 {
+  display:none;
+}
+
 /* Movie container*/
 .wrapper section .item {
   position: relative;
   padding: 0 2px;
   transition: 250ms all;
 }
+
+
 /* Movie picture*/
 .wrapper section .item img {
   object-fit: fill;

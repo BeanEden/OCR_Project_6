@@ -69,6 +69,10 @@ h1 {
   min-height: 380px;
 }
 
+.bg-img h2 {
+  display: none;
+}
+
 /* Best film background image*/
 .bg-img img {
   width: 100%;
@@ -140,6 +144,10 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, auto);
   margin: 20px 0;
+}
+
+.wrapper section h2 {
+  display: none;
 }
 
 /* Movie container*/

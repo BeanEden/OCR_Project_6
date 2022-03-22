@@ -3,10 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>Title</title>
+    <title>ID3</title>
 </head>
 <body>
  <script>
+
+   function listeUrlBestFilm (url1, category, number, start = 0) {
+    let p = fetch(url1)
+    let a = p.then(function (res) {
+        if (res.ok) {
+            return res.json();
+        }
+    })
+    let variable = 5+start
+    let bestfilm = a.then(function (a) {
+        for (let i = start; i < (variable); i++) {
+            let count = i+1
+            infoFilm(a["results"][i]["url"], ("best" + category + "Film" + count))
+
+        if (number > 5) {
+            page2Fonction(a["next"], category, number)
+        }
+        if (start > 0) {
+            infoBestFilm(a["results"][0]["url"],("best" + category + "Film" + 1))
+        }
+        }
+    })
+}
+
+function page2Fonction (url2, category, number){
+    let p2 = fetch(url2)
+    let a2 = p2.then(function (res) {
+        if (res.ok) {
+            return res.json();
+        }
+    })
+    let bestfilm2 = a2.then(function (a2) {
+        for (let i = 0; i < number; i++) {
+            let count2 = i+6
+            infoFilm(a2["results"][i]["url"], ("best" + category + "Film" + count2))
+        }
+    })
+}
+
+function infoFilm(url,itemID) {
+    let p = fetch(url)
+    let z = p.then(function (res) {
+        if (res.ok) {
+            return res.json();
+        }
+    })
+    let bestfilm = z.then(function (z) {
+            document.getElementById(itemID).innerHTML = (
+                "<img src=" + z["image_url"] + " alt=" + z["title"] + ">" +
+                "<h1 class=heading>" + z["title"] + "</h1>" +
+                "<p class=duration>" + z["duration"] + " min" + "</p>");
+    })
+}
+
+function infoBestFilm(url,itemID) {
+    let p = fetch(url)
+    let z = p.then(function (res) {
+        if (res.ok) {
+            return res.json();
+        }
+    })
+    let bestfilm = z.then(function (z) {
+            document.getElementById(itemID).innerHTML = (
+                "<section class=bg-img background-image=" + z["image_url"] +">" +
+                "<img src=" + z["image_url"] + " alt=" + z["title"] + ">" +
+              "<h1 class=bg-img__heading>" + z["title"] + "</h1>" +
+              "<button id=myBtn class=bg-img__btn>Play</button>" +
+              <!-- RESUME DU FILM-->
+              "<p class=bg-img__description>"+ z["description"] + "</p>"+
+          "</section>");
+    })
+}
+
+function modalListClassic(filmPromise) {
+        return (
+        "<div class=modal-content>"+
+        "< span className = close > & times; </span>" +
+        "<h2 class=modal-header>" + filmPromise["title"] +"</h2>"+
+        "<img src=" + filmPromise["image_url"] + " alt=" + filmPromise["title"] + ">" +
+        "<div class='modal-body'>" +
+        "<ul>" +
+        "<li> Categorie(s) : " + filmPromise["genres"] + "</li>"+
+        "<li> Date de sortie : " + filmPromise["date_published"] + "</li>"+
+        "<li> Rated : " + filmPromise["rated"] + "</li> "+
+        "<li> Imdb score : " + filmPromise["imdb_score"] + "</li>"+
+        "<li> Réalisateur : " + filmPromise["directors"] + "</li>"+
+        "<li> Acteurs : " + filmPromise["actors"] + "</li>"+
+        "<li> Durée : " + filmPromise["duration"] + "min"+"</li>"+
+        "<li> Pays d'origine : " + filmPromise["countries"] + "</li>"+
+        "<li> Box Office : " + filmPromise["worldwide_gross_income"] + "</li>"+
+        "</ul>"+
+        "<p> Description : " + filmPromise["long_description"]+"</p>" +
+        "</div>"+
+        "</div>")
+    }
+
+function specificMovieModal (filmPromise) {
+    modal.innerHTML= modalListClassic(filmPromise)
+        }
+
+function modalDone(url) {
+    let p = fetch(url)
+    let z = p.then(function (res) {
+        if (res.ok) {
+            return res.json();
+        }
+    })
+    let r = z.then(function (z) {
+        specificMovieModal(z)
+    })
+}
 class FilmContent {
     constructor(image, title, category, exitDate, rated, imdbScore, director, actors, duration, originCountry, boxOfficeResult, summary) {
     this.image = image;
@@ -71,7 +182,21 @@ let film8 = new FilmContent("img/image_test.webp", "titre_test8", "genre8", "02/
   </div>
 
 </header>
+<div id="myModal" class="modal">
 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 id="titremodale">Titre</h2>
+        <img
+                src="img/image_test.webp"
+                alt="Describe Image">
+    </div>
+    <div id="modalList" class="modal-body">
+      </div>
+    </div>
+  </div>
 <!-- BEST FILM BY IMDB-->
     <section class="bg-img">
     <!-- INCLUDE IMAGE -->
@@ -83,29 +208,7 @@ document.getElementById("bestfilm").innerHTML = film1.title;
 </script>
       <!-- BOUTON-->
       <button id="myBtn" class="bg-img__btn">Play</button>
-<div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2 id="titremodale">Titre</h2>
-              <script>
-                document.getElementById("titremodale").innerHTML = film1.title;
-                </script>
-
-        <img
-                src="img/image_test.webp"
-                alt="Describe Image">
-    </div>
-    <div id="modalList" class="modal-body">
-      </div>
-
-      <script>
-document.getElementById("modalList").innerHTML = modalListWriter(film1);
-</script>
-    </div>
-  </div>
 
 </div>
       <!-- RESUME DU FILM-->
@@ -548,11 +651,13 @@ let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
 btn.onclick = function() {
-  modal.style.display = "block";
+  modal.style.display = "block"
+  modalDone("http://localhost:8000/api/v1/titles/1508669");
 }
 let modal2 = document.getElementById("test");
 modal2.onclick = function(){
-    modal.style.display = "block";
+    modal.style.display = "block"
+    modalDone("http://localhost:8000/api/v1/titles/1508669");
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {

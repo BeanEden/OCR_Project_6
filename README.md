@@ -37,7 +37,7 @@ Les informations de la fenêtre modale sont mises à jour au travers de requête
 * fichier html : 
     * indication des urls des 4 catégories souhaitées
     * affichage de la page basique html (structure sans contenu)
-    * lancement du script "allCat" et génération du contenu de la page
+    * lancement du script et génération du contenu de la page
 * fichier javascript : 
     * pour chaque catégorie :
       * via l'url de catégorie, récupère les urls de chaque film (y compris sur la page 2 du serveur)
